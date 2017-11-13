@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+<h2><u>Task List</u></h2>
+    <table border="1">
+        <tr>
+            <td style="width:400px"><b>Task</b></td>
+            <td style="width:200px"><b>Email</b></td>
+            <td style="width:100px"><b>Priority</b></td>
+        </tr>
+        <tr>
+            <td>
+                {% for task in tasks %}
+                {{task}}<br><br>
+                {% endfor %}
+            </td>
+            <td>
+                {% for email in emails %}
+                {{email}}<br><br>
+                {% endfor %}
+            </td>
+            <td>
+                {% for priority in priorities %}
+                {{priority}}<br><br>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <table border="1">
+        <tr>
+            <td colspan="2" align="center"><br>
+        <b>ADD A NEW TASK</b><br><br></td>
+        </tr>
+        <tr>
+            <td><form action="submit" method="post">Task:  </td>
+            <td><input type="text" name="task"></td>
+        </tr>
+        <tr><td>Email:  </td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td>Priority:</td>
+            <td><select name="priority"><br>
+                    <option value="Select">Select a Priority:</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select></td>
+        </tr>
+        <tr><td><br></td><td><br></td></tr>
+        <tr>
+            <td><input type="submit" value="Add To Do Item"></form>
+            <td><form action="clear" method="post">
+                <input type="submit" value="Clear Entire List"></form></td>
+        </tr>
+    </table>
+</body>
+</html>
